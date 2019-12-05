@@ -65,6 +65,22 @@ class ProviderUpdatesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @provider_update = ProviderUpdate.find(params.fetch("id_to_remove"))
+
+    @provider_update.destroy
+
+    redirect_to("/users/#{@provider_update.user_id}", notice: "ProviderUpdate deleted successfully.")
+  end
+
+  def destroy_row_from_venue
+    @provider_update = ProviderUpdate.find(params.fetch("id_to_remove"))
+
+    @provider_update.destroy
+
+    redirect_to("/venues/#{@provider_update.venue_id}", notice: "ProviderUpdate deleted successfully.")
+  end
+
   def destroy_row
     @provider_update = ProviderUpdate.find(params.fetch("id_to_remove"))
 

@@ -53,6 +53,14 @@ class ParentCommentsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @parent_comment = ParentComment.find(params.fetch("id_to_remove"))
+
+    @parent_comment.destroy
+
+    redirect_to("/users/#{@parent_comment.user_id}", notice: "ParentComment deleted successfully.")
+  end
+
   def destroy_row
     @parent_comment = ParentComment.find(params.fetch("id_to_remove"))
 

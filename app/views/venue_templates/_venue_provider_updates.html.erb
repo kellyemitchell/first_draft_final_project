@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Provider Updates
+
+    <a data-toggle="collapse" href="#venue_provider_updates_new_form">
+      Add provider update
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @venue.provider_updates.each do |provider_update| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/provider_updates/<%= provider_update.id %>">
+          <%= provider_update.breakfast %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_provider_update_from_venue/<%= provider_update.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="venue_provider_updates_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

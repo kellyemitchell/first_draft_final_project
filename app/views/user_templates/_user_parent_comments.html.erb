@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Parent Comments
+
+    <a data-toggle="collapse" href="#user_parent_comments_new_form">
+      Add parent comment
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.parent_comments.each do |parent_comment| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/parent_comments/<%= parent_comment.id %>">
+          <%= parent_comment.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

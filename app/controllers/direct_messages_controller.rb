@@ -55,6 +55,22 @@ class DirectMessagesController < ApplicationController
     end
   end
 
+  def destroy_row_from_parent
+    @direct_message = DirectMessage.find(params.fetch("id_to_remove"))
+
+    @direct_message.destroy
+
+    redirect_to("/users/#{@direct_message.parent_id}", notice: "DirectMessage deleted successfully.")
+  end
+
+  def destroy_row_from_sender
+    @direct_message = DirectMessage.find(params.fetch("id_to_remove"))
+
+    @direct_message.destroy
+
+    redirect_to("/users/#{@direct_message.sender_id}", notice: "DirectMessage deleted successfully.")
+  end
+
   def destroy_row
     @direct_message = DirectMessage.find(params.fetch("id_to_remove"))
 
