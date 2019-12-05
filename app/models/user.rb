@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :parent_comments,
+             :dependent => :destroy
+
   has_many   :comments,
              :class_name => "ProviderUpdate",
              :dependent => :destroy
