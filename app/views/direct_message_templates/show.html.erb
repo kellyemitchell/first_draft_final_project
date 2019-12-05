@@ -38,7 +38,11 @@
       </dt>
       <!-- Display sender_id start -->
       <dd>
-        <%= @direct_message.sender_id %>
+        <% if @direct_message.sender.present? %>
+          <a href="/users/<%= @direct_message.sender_id %>">
+            <%= @direct_message.sender.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display sender_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display parent_id start -->
       <dd>
-        <%= @direct_message.parent_id %>
+        <% if @direct_message.parent.present? %>
+          <a href="/users/<%= @direct_message.parent_id %>">
+            <%= @direct_message.parent.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display parent_id end -->
 

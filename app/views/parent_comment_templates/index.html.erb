@@ -58,7 +58,11 @@
 
         <!-- Display parent_comment.user_id start -->
         <td>
-          <%= parent_comment.user.email %>
+          <% if parent_comment.user.present? %>
+            <a href="/users/<%= parent_comment.user.id %>">
+              <%= parent_comment.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display parent_comment.user_id end -->
 

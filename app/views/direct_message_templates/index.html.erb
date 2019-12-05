@@ -62,13 +62,21 @@
 
         <!-- Display direct_message.sender_id start -->
         <td>
-          <%= direct_message.sender.email %>
+          <% if direct_message.sender.present? %>
+            <a href="/users/<%= direct_message.sender.id %>">
+              <%= direct_message.sender.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display direct_message.sender_id end -->
 
         <!-- Display direct_message.parent_id start -->
         <td>
-          <%= direct_message.parent.email %>
+          <% if direct_message.parent.present? %>
+            <a href="/users/<%= direct_message.parent.id %>">
+              <%= direct_message.parent.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display direct_message.parent_id end -->
 

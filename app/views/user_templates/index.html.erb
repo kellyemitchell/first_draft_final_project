@@ -84,7 +84,11 @@
 
         <!-- Display user.venue_id start -->
         <td>
-          <%= user.venue.name %>
+          <% if user.venue.present? %>
+            <a href="/venues/<%= user.venue.id %>">
+              <%= user.venue.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user.venue_id end -->
 

@@ -70,7 +70,11 @@
 
         <!-- Display photo.user_id start -->
         <td>
-          <%= photo.user.email %>
+          <% if photo.user.present? %>
+            <a href="/users/<%= photo.user.id %>">
+              <%= photo.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display photo.user_id end -->
 
@@ -88,7 +92,11 @@
 
         <!-- Display photo.venue_id start -->
         <td>
-          <%= photo.venue.name %>
+          <% if photo.venue.present? %>
+            <a href="/venues/<%= photo.venue.id %>">
+              <%= photo.venue.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display photo.venue_id end -->
 

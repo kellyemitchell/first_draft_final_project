@@ -70,7 +70,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @provider_update.user_id %>
+        <% if @provider_update.user.present? %>
+          <a href="/users/<%= @provider_update.user_id %>">
+            <%= @provider_update.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -97,7 +101,11 @@
       </dt>
       <!-- Display venue_id start -->
       <dd>
-        <%= @provider_update.venue_id %>
+        <% if @provider_update.venue.present? %>
+          <a href="/venues/<%= @provider_update.venue_id %>">
+            <%= @provider_update.venue.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display venue_id end -->
 
