@@ -1,0 +1,152 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All provider updates
+    </h1>
+
+    <a href="/provider_updates/new" class="btn btn-block btn-outline-secondary">
+      Add a new provider update
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Breakfast
+        </th>
+
+        <th>
+          Lunch
+        </th>
+
+        <th>
+          Snacks
+        </th>
+
+        <th>
+          Activities
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Date
+        </th>
+
+        <th>
+          Reminders
+        </th>
+
+        <th>
+          Venue
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @provider_updates.each do |provider_update| %>
+      <tr>
+        <!-- Display provider_update.id start -->
+        <td>
+          <%= provider_update.id %>
+        </td>
+        <!-- Display provider_update.id end -->
+
+        <!-- Display provider_update.breakfast start -->
+        <td>
+          <%= provider_update.breakfast %>
+        </td>
+        <!-- Display provider_update.breakfast end -->
+
+        <!-- Display provider_update.lunch start -->
+        <td>
+          <%= provider_update.lunch %>
+        </td>
+        <!-- Display provider_update.lunch end -->
+
+        <!-- Display provider_update.snacks start -->
+        <td>
+          <%= provider_update.snacks %>
+        </td>
+        <!-- Display provider_update.snacks end -->
+
+        <!-- Display provider_update.activities start -->
+        <td>
+          <%= provider_update.activities %>
+        </td>
+        <!-- Display provider_update.activities end -->
+
+        <!-- Display provider_update.user_id start -->
+        <td>
+          <%= provider_update.user_id %>
+        </td>
+        <!-- Display provider_update.user_id end -->
+
+        <!-- Display provider_update.date start -->
+        <td>
+          <%= provider_update.date %>
+        </td>
+        <!-- Display provider_update.date end -->
+
+        <!-- Display provider_update.reminders start -->
+        <td>
+          <%= provider_update.reminders %>
+        </td>
+        <!-- Display provider_update.reminders end -->
+
+        <!-- Display provider_update.venue_id start -->
+        <td>
+          <%= provider_update.venue_id %>
+        </td>
+        <!-- Display provider_update.venue_id end -->
+
+        <!-- Display provider_update.created_at start -->
+        <td>
+          <%= time_ago_in_words(provider_update.created_at) %> ago
+        </td>
+        <!-- Display provider_update.created_at end -->
+
+        <!-- Display provider_update.updated_at start -->
+        <td>
+          <%= time_ago_in_words(provider_update.updated_at) %> ago
+        </td>
+        <!-- Display provider_update.updated_at end -->
+
+        <td>
+          <a href="/provider_updates/<%= provider_update.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

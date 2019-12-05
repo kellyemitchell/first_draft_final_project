@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Provider update resource:
+
+  # CREATE
+  get("/provider_updates/new", { :controller => "provider_updates", :action => "new_form" })
+  post("/create_provider_update", { :controller => "provider_updates", :action => "create_row" })
+
+  # READ
+  get("/provider_updates", { :controller => "provider_updates", :action => "index" })
+  get("/provider_updates/:id_to_display", { :controller => "provider_updates", :action => "show" })
+
+  # UPDATE
+  get("/provider_updates/:prefill_with_id/edit", { :controller => "provider_updates", :action => "edit_form" })
+  post("/update_provider_update/:id_to_modify", { :controller => "provider_updates", :action => "update_row" })
+
+  # DELETE
+  get("/delete_provider_update/:id_to_remove", { :controller => "provider_updates", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Photo resource:
 
   # CREATE
