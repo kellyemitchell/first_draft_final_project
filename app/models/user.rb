@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :comments,
+             :class_name => "ProviderUpdate",
+             :dependent => :destroy
+
   has_many   :photos,
              :dependent => :destroy
 
