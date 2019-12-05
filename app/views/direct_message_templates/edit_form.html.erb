@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for parent_id start -->
-    <input type="text" id="parent_id" name="parent_id" class="form-control" value="<%= @direct_message.parent_id %>">
+    <%= select_tag(:parent_id, options_from_collection_for_select(User.all, :id, :email, @direct_message.parent_id), :class => "form-control") %>
     <!-- Input for parent_id end -->
   </div>
   <!-- Label and input for parent_id end -->
