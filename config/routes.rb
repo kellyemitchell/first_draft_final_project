@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Direct message resource:
+
+  # CREATE
+  get("/direct_messages/new", { :controller => "direct_messages", :action => "new_form" })
+  post("/create_direct_message", { :controller => "direct_messages", :action => "create_row" })
+
+  # READ
+  get("/direct_messages", { :controller => "direct_messages", :action => "index" })
+  get("/direct_messages/:id_to_display", { :controller => "direct_messages", :action => "show" })
+
+  # UPDATE
+  get("/direct_messages/:prefill_with_id/edit", { :controller => "direct_messages", :action => "edit_form" })
+  post("/update_direct_message/:id_to_modify", { :controller => "direct_messages", :action => "update_row" })
+
+  # DELETE
+  get("/delete_direct_message/:id_to_remove", { :controller => "direct_messages", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Parent comment resource:
 
   # CREATE

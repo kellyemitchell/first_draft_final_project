@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Direct message #<%= @direct_message.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/direct_messages" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link direct_message start -->
+      <div class="col">
+        <a href="/direct_messages/<%= @direct_message.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit direct message
+        </a>
+      </div>
+      <!-- Edit link direct_message end -->
+
+      <!-- Delete link direct_message start -->
+      <div class="col">
+        <a href="/delete_direct_message/<%= @direct_message.id %>" class="btn btn-block btn-outline-secondary">
+          Delete direct message
+        </a>
+      </div>
+      <!-- Delete link direct_message end -->
+    </div>
+
+    <dl>
+      <dt>
+        Sender
+      </dt>
+      <!-- Display sender_id start -->
+      <dd>
+        <%= @direct_message.sender_id %>
+      </dd>
+      <!-- Display sender_id end -->
+
+      <dt>
+        Parent
+      </dt>
+      <!-- Display parent_id start -->
+      <dd>
+        <%= @direct_message.parent_id %>
+      </dd>
+      <!-- Display parent_id end -->
+
+      <dt>
+        Body
+      </dt>
+      <!-- Display body start -->
+      <dd>
+        <%= @direct_message.body %>
+      </dd>
+      <!-- Display body end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@direct_message.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@direct_message.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

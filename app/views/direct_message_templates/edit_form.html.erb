@@ -1,0 +1,56 @@
+<h1>
+  Edit direct message #<%= @direct_message.id %>
+</h1>
+
+<hr>
+
+<!-- Form direct_message start -->
+<form action="/update_direct_message/<%= @direct_message.id %>" method="post">
+<!-- Form direct_message end -->
+
+  <!-- Label and input for sender_id start -->
+  <div class="form-group">
+    <label for="sender_id">
+      Sender
+    </label>
+
+    <!-- Input for sender_id start -->
+    <input type="text" id="sender_id" name="sender_id" class="form-control" value="<%= @direct_message.sender_id %>">
+    <!-- Input for sender_id end -->
+  </div>
+  <!-- Label and input for sender_id end -->
+
+  <!-- Label and input for parent_id start -->
+  <div class="form-group">
+    <label for="parent_id">
+      Parent
+    </label>
+
+    <!-- Input for parent_id start -->
+    <input type="text" id="parent_id" name="parent_id" class="form-control" value="<%= @direct_message.parent_id %>">
+    <!-- Input for parent_id end -->
+  </div>
+  <!-- Label and input for parent_id end -->
+
+  <!-- Label and input for body start -->
+  <div class="form-group">
+    <label for="body">
+      Body
+    </label>
+
+    <!-- Input for body start -->
+    <textarea id="body" name="body" class="form-control" rows="3"><%= @direct_message.body %></textarea>
+    <!-- Input for body end -->
+  </div>
+  <!-- Label and input for body end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update direct message
+  </button>
+</form>
+
+<hr>
+
+<a href="/direct_messages">
+  Go back
+</a>
