@@ -1,6 +1,9 @@
 class Venue < ApplicationRecord
   # Direct associations
 
+  has_many   :provider_updates,
+             :dependent => :destroy
+
   has_many   :photos,
              :dependent => :destroy
 
