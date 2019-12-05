@@ -1,6 +1,7 @@
 class ProviderUpdatesController < ApplicationController
   def index
-    @provider_updates = ProviderUpdate.page(params[:page]).per(10)
+    @q = ProviderUpdate.ransack(params[:q])
+    @provider_updates = @q.result(:distinct => true).includes(:user, :venue).page(params[:page]).per(10)
 
     render("provider_update_templates/index.html.erb")
   end

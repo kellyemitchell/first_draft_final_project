@@ -10,7 +10,8 @@ class DirectMessagesController < ApplicationController
   end
 
   def index
-    @direct_messages = DirectMessage.page(params[:page]).per(10)
+    @q = DirectMessage.ransack(params[:q])
+    @direct_messages = @q.result(:distinct => true).includes(:parent, :sender).page(params[:page]).per(10)
 
     render("direct_message_templates/index.html.erb")
   end
