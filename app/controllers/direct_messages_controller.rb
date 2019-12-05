@@ -42,7 +42,7 @@ class DirectMessagesController < ApplicationController
   def update_row
     @direct_message = DirectMessage.find(params.fetch("id_to_modify"))
 
-    @direct_message.sender_id = params.fetch("sender_id")
+    
     @direct_message.parent_id = params.fetch("parent_id")
     @direct_message.body = params.fetch("body")
 
