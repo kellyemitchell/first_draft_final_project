@@ -38,6 +38,27 @@ class ProviderUpdatesController < ApplicationController
     end
   end
 
+  def create_row_from_venue
+    @provider_update = ProviderUpdate.new
+
+    @provider_update.breakfast = params.fetch("breakfast")
+    @provider_update.lunch = params.fetch("lunch")
+    @provider_update.snacks = params.fetch("snacks")
+    @provider_update.activities = params.fetch("activities")
+    @provider_update.user_id = params.fetch("user_id")
+    @provider_update.date = params.fetch("date")
+    @provider_update.reminders = params.fetch("reminders")
+    @provider_update.venue_id = params.fetch("venue_id")
+
+    if @provider_update.valid?
+      @provider_update.save
+
+      redirect_to("/venues/#{@provider_update.venue_id}", notice: "ProviderUpdate created successfully.")
+    else
+      render("provider_update_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @provider_update = ProviderUpdate.find(params.fetch("prefill_with_id"))
 

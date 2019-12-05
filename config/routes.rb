@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/provider_updates/new", { :controller => "provider_updates", :action => "new_form" })
   post("/create_provider_update", { :controller => "provider_updates", :action => "create_row" })
+  post("/create_provider_update_from_venue", { :controller => "provider_updates", :action => "create_row_from_venue" })
 
   # READ
   get("/provider_updates", { :controller => "provider_updates", :action => "index" })
@@ -69,6 +70,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/photos/new", { :controller => "photos", :action => "new_form" })
   post("/create_photo", { :controller => "photos", :action => "create_row" })
+  post("/create_photo_from_venue", { :controller => "photos", :action => "create_row_from_venue" })
 
   # READ
   get("/photos", { :controller => "photos", :action => "index" })

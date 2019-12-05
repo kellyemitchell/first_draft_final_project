@@ -6,6 +6,9 @@ class VenuesController < ApplicationController
   end
 
   def show
+    @provider_update = ProviderUpdate.new
+    @photo = Photo.new
+    @user = User.new
     @venue = Venue.find(params.fetch("id_to_display"))
 
     render("venue_templates/show.html.erb")
