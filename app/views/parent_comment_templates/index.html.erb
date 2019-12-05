@@ -1,0 +1,92 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All parent comments
+    </h1>
+
+    <a href="/parent_comments/new" class="btn btn-block btn-outline-secondary">
+      Add a new parent comment
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Body
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @parent_comments.each do |parent_comment| %>
+      <tr>
+        <!-- Display parent_comment.id start -->
+        <td>
+          <%= parent_comment.id %>
+        </td>
+        <!-- Display parent_comment.id end -->
+
+        <!-- Display parent_comment.user_id start -->
+        <td>
+          <%= parent_comment.user_id %>
+        </td>
+        <!-- Display parent_comment.user_id end -->
+
+        <!-- Display parent_comment.body start -->
+        <td>
+          <%= parent_comment.body %>
+        </td>
+        <!-- Display parent_comment.body end -->
+
+        <!-- Display parent_comment.created_at start -->
+        <td>
+          <%= time_ago_in_words(parent_comment.created_at) %> ago
+        </td>
+        <!-- Display parent_comment.created_at end -->
+
+        <!-- Display parent_comment.updated_at start -->
+        <td>
+          <%= time_ago_in_words(parent_comment.updated_at) %> ago
+        </td>
+        <!-- Display parent_comment.updated_at end -->
+
+        <td>
+          <a href="/parent_comments/<%= parent_comment.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Parent comment resource:
+
+  # CREATE
+  get("/parent_comments/new", { :controller => "parent_comments", :action => "new_form" })
+  post("/create_parent_comment", { :controller => "parent_comments", :action => "create_row" })
+
+  # READ
+  get("/parent_comments", { :controller => "parent_comments", :action => "index" })
+  get("/parent_comments/:id_to_display", { :controller => "parent_comments", :action => "show" })
+
+  # UPDATE
+  get("/parent_comments/:prefill_with_id/edit", { :controller => "parent_comments", :action => "edit_form" })
+  post("/update_parent_comment/:id_to_modify", { :controller => "parent_comments", :action => "update_row" })
+
+  # DELETE
+  get("/delete_parent_comment/:id_to_remove", { :controller => "parent_comments", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Provider update resource:
 
   # CREATE

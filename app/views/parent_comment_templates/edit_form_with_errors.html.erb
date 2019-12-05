@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @parent_comment.errors.any? %>
+  <% @parent_comment.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit parent comment #<%= @parent_comment.id %>
+</h1>
+
+<hr>
+
+<!-- Form parent_comment start -->
+<form action="/update_parent_comment/<%= @parent_comment.id %>" method="post">
+<!-- Form parent_comment end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @parent_comment.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for body start -->
+  <div class="form-group">
+    <label for="body">
+      Body
+    </label>
+
+    <!-- Input for body start -->
+    <input type="text" id="body" name="body" class="form-control" value="<%= @parent_comment.body %>">
+    <!-- Input for body end -->
+  </div>
+  <!-- Label and input for body end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update parent comment
+  </button>
+</form>
+
+<hr>
+
+<a href="/parent_comments">
+  Go back
+</a>
