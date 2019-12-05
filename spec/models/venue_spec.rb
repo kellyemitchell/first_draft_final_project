@@ -4,6 +4,8 @@ RSpec.describe Venue, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:photos) }
+
     it { should have_many(:users) }
 
     end
