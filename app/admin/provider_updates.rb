@@ -1,4 +1,6 @@
 ActiveAdmin.register ProviderUpdate do
+
+ permit_params :breakfast, :lunch, :snacks, :activities, :user_id, :date, :reminders, :venue_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
