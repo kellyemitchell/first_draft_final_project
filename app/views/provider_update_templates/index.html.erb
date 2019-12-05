@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "provider_update_templates/provider_updates_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -78,37 +74,26 @@
 
       <% @provider_updates.each do |provider_update| %>
       <tr>
-        <!-- Display provider_update.id start -->
         <td>
           <%= provider_update.id %>
         </td>
-        <!-- Display provider_update.id end -->
 
-        <!-- Display provider_update.breakfast start -->
         <td>
           <%= provider_update.breakfast %>
         </td>
-        <!-- Display provider_update.breakfast end -->
 
-        <!-- Display provider_update.lunch start -->
         <td>
           <%= provider_update.lunch %>
         </td>
-        <!-- Display provider_update.lunch end -->
 
-        <!-- Display provider_update.snacks start -->
         <td>
           <%= provider_update.snacks %>
         </td>
-        <!-- Display provider_update.snacks end -->
 
-        <!-- Display provider_update.activities start -->
         <td>
           <%= provider_update.activities %>
         </td>
-        <!-- Display provider_update.activities end -->
 
-        <!-- Display provider_update.user_id start -->
         <td>
           <% if provider_update.user.present? %>
             <a href="/users/<%= provider_update.user.id %>">
@@ -116,21 +101,15 @@
             </a>
           <% end %>
         </td>
-        <!-- Display provider_update.user_id end -->
 
-        <!-- Display provider_update.date start -->
         <td>
           <%= provider_update.date %>
         </td>
-        <!-- Display provider_update.date end -->
 
-        <!-- Display provider_update.reminders start -->
         <td>
           <%= provider_update.reminders %>
         </td>
-        <!-- Display provider_update.reminders end -->
 
-        <!-- Display provider_update.venue_id start -->
         <td>
           <% if provider_update.venue.present? %>
             <a href="/venues/<%= provider_update.venue.id %>">
@@ -138,19 +117,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display provider_update.venue_id end -->
 
-        <!-- Display provider_update.created_at start -->
         <td>
           <%= time_ago_in_words(provider_update.created_at) %> ago
         </td>
-        <!-- Display provider_update.created_at end -->
 
-        <!-- Display provider_update.updated_at start -->
         <td>
           <%= time_ago_in_words(provider_update.updated_at) %> ago
         </td>
-        <!-- Display provider_update.updated_at end -->
 
         <td>
           <a href="/provider_updates/<%= provider_update.id %>">

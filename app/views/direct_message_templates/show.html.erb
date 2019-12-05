@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link direct_message start -->
       <div class="col">
         <% if current_user == @direct_message.sender %>
           <a href="/direct_messages/<%= @direct_message.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link direct_message end -->
 
-      <!-- Delete link direct_message start -->
       <div class="col">
         <% if current_user == @direct_message.sender %>
           <a href="/delete_direct_message/<%= @direct_message.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link direct_message end -->
     </div>
 
     <dl>
       <dt>
         Sender
       </dt>
-      <!-- Display sender_id start -->
       <dd>
         <% if @direct_message.sender.present? %>
           <a href="/users/<%= @direct_message.sender_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display sender_id end -->
 
       <dt>
         Parent
       </dt>
-      <!-- Display parent_id start -->
       <dd>
         <% if @direct_message.parent.present? %>
           <a href="/users/<%= @direct_message.parent_id %>">
@@ -57,37 +50,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display parent_id end -->
 
       <dt>
         Body
       </dt>
-      <!-- Display body start -->
       <dd>
         <%= @direct_message.body %>
       </dd>
-      <!-- Display body end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@direct_message.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@direct_message.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

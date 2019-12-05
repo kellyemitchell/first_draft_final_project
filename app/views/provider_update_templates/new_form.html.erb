@@ -5,105 +5,71 @@
 
 <hr>
 
-<!-- Form provider_update start -->
 <form action="/create_provider_update" method="post">
-<!-- Form provider_update end -->
 
-  <!-- Label and input for breakfast start -->
   <div class="form-group">
     <label for="breakfast">
       Breakfast
     </label>
 
-    <!-- Input for breakfast start -->
     <input type="text" id="breakfast" name="breakfast" class="form-control">
-    <!-- Input for breakfast end -->
   </div>
-  <!-- Label and input for breakfast end -->
 
-  <!-- Label and input for lunch start -->
   <div class="form-group">
     <label for="lunch">
       Lunch
     </label>
 
-    <!-- Input for lunch start -->
     <input type="text" id="lunch" name="lunch" class="form-control">
-    <!-- Input for lunch end -->
   </div>
-  <!-- Label and input for lunch end -->
 
-  <!-- Label and input for snacks start -->
   <div class="form-group">
     <label for="snacks">
       Snacks
     </label>
 
-    <!-- Input for snacks start -->
     <input type="text" id="snacks" name="snacks" class="form-control">
-    <!-- Input for snacks end -->
   </div>
-  <!-- Label and input for snacks end -->
 
-  <!-- Label and input for activities start -->
   <div class="form-group">
     <label for="activities">
       Activities
     </label>
 
-    <!-- Input for activities start -->
     <input type="text" id="activities" name="activities" class="form-control">
-    <!-- Input for activities end -->
   </div>
-  <!-- Label and input for activities end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @provider_update.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for date start -->
   <div class="form-group">
     <label for="date">
       Date
     </label>
 
-    <!-- Input for date start -->
     <input type="text" id="date" name="date" class="form-control">
-    <!-- Input for date end -->
   </div>
-  <!-- Label and input for date end -->
 
-  <!-- Label and input for reminders start -->
   <div class="form-group">
     <label for="reminders">
       Reminders
     </label>
 
-    <!-- Input for reminders start -->
     <input type="text" id="reminders" name="reminders" class="form-control">
-    <!-- Input for reminders end -->
   </div>
-  <!-- Label and input for reminders end -->
 
-  <!-- Label and input for venue_id start -->
   <div class="form-group">
     <label for="venue_id">
       Venue
     </label>
 
-    <!-- Input for venue_id start -->
     <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all, :id, :name, @provider_update.venue_id), :class => "form-control") %>
-    <!-- Input for venue_id end -->
   </div>
-  <!-- Label and input for venue_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create provider update

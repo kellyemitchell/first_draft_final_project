@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.sent_messages.each do |direct_message| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/direct_messages/<%= direct_message.id %>">
           <%= direct_message.sender_id %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

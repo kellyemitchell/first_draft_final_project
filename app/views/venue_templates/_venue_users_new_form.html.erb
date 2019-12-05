@@ -1,45 +1,29 @@
-<!-- Form user start -->
 <form action="/create_user_from_venue" method="post">
-<!-- Form user end -->
 
-  <!-- Label and input for email start -->
   <div class="form-group">
     <label for="email">
       Email
     </label>
 
-    <!-- Input for email start -->
     <input type="text" id="email" name="email" class="form-control" value="<%= @user.email %>">
-    <!-- Input for email end -->
   </div>
-  <!-- Label and input for email end -->
 
-  <!-- Label and input for password start -->
   <div class="form-group">
     <label for="password">
       Password
     </label>
 
-    <!-- Input for password start -->
     <input type="text" id="password" name="password" class="form-control" value="<%= @user.password %>">
-    <!-- Input for password end -->
   </div>
-  <!-- Label and input for password end -->
 
-  <!-- Label and input for admin start -->
   <div class="form-group">
     <label for="admin">
       Admin
     </label>
-    <!-- Input for admin start -->
     <input id="admin" class="form-check-input" name="admin" type="checkbox" <%= "checked" if @user.admin %>>
-    <!-- Input for admin end -->
   </div>
 
-  <!-- Label and input for venue_id start -->
-  <!-- Input for venue_id start -->
   <input type="hidden" name="venue_id" value="<%= @venue.id %>">
-  <!-- Input for venue_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create user

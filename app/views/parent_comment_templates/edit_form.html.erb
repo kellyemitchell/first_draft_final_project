@@ -4,33 +4,23 @@
 
 <hr>
 
-<!-- Form parent_comment start -->
 <form action="/update_parent_comment/<%= @parent_comment.id %>" method="post">
-<!-- Form parent_comment end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @parent_comment.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for body start -->
   <div class="form-group">
     <label for="body">
       Body
     </label>
 
-    <!-- Input for body start -->
     <input type="text" id="body" name="body" class="form-control" value="<%= @parent_comment.body %>">
-    <!-- Input for body end -->
   </div>
-  <!-- Label and input for body end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update parent comment

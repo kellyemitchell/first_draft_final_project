@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link photo start -->
       <div class="col">
         <a href="/photos/<%= @photo.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit photo
         </a>
       </div>
-      <!-- Edit link photo end -->
 
-      <!-- Delete link photo start -->
       <div class="col">
         <a href="/delete_photo/<%= @photo.id %>" class="btn btn-block btn-outline-secondary">
           Delete photo
         </a>
       </div>
-      <!-- Delete link photo end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @photo.user.present? %>
           <a href="/users/<%= @photo.user_id %>">
@@ -40,30 +35,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Date
       </dt>
-      <!-- Display date start -->
       <dd>
         <%= @photo.date %>
       </dd>
-      <!-- Display date end -->
 
       <dt>
         Caption
       </dt>
-      <!-- Display caption start -->
       <dd>
         <%= @photo.caption %>
       </dd>
-      <!-- Display caption end -->
 
       <dt>
         Venue
       </dt>
-      <!-- Display venue_id start -->
       <dd>
         <% if @photo.venue.present? %>
           <a href="/venues/<%= @photo.venue_id %>">
@@ -71,37 +60,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display venue_id end -->
 
       <dt>
         Photo location
       </dt>
-      <!-- Display photo_location start -->
       <dd>
         <%= @photo.photo_location %>
       </dd>
-      <!-- Display photo_location end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@photo.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@photo.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

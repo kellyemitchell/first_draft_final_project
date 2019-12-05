@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link parent_comment start -->
       <div class="col">
         <a href="/parent_comments/<%= @parent_comment.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit parent comment
         </a>
       </div>
-      <!-- Edit link parent_comment end -->
 
-      <!-- Delete link parent_comment start -->
       <div class="col">
         <a href="/delete_parent_comment/<%= @parent_comment.id %>" class="btn btn-block btn-outline-secondary">
           Delete parent comment
         </a>
       </div>
-      <!-- Delete link parent_comment end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @parent_comment.user.present? %>
           <a href="/users/<%= @parent_comment.user_id %>">
@@ -40,37 +35,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Body
       </dt>
-      <!-- Display body start -->
       <dd>
         <%= @parent_comment.body %>
       </dd>
-      <!-- Display body end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@parent_comment.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@parent_comment.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

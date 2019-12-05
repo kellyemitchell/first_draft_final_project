@@ -11,64 +11,51 @@
         </a>
       </div>
 
-      <!-- Edit link provider_update start -->
       <div class="col">
         <a href="/provider_updates/<%= @provider_update.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit provider update
         </a>
       </div>
-      <!-- Edit link provider_update end -->
 
-      <!-- Delete link provider_update start -->
       <div class="col">
         <a href="/delete_provider_update/<%= @provider_update.id %>" class="btn btn-block btn-outline-secondary">
           Delete provider update
         </a>
       </div>
-      <!-- Delete link provider_update end -->
     </div>
 
     <dl>
       <dt>
         Breakfast
       </dt>
-      <!-- Display breakfast start -->
       <dd>
         <%= @provider_update.breakfast %>
       </dd>
-      <!-- Display breakfast end -->
 
       <dt>
         Lunch
       </dt>
-      <!-- Display lunch start -->
       <dd>
         <%= @provider_update.lunch %>
       </dd>
-      <!-- Display lunch end -->
 
       <dt>
         Snacks
       </dt>
-      <!-- Display snacks start -->
       <dd>
         <%= @provider_update.snacks %>
       </dd>
-      <!-- Display snacks end -->
 
       <dt>
         Activities
       </dt>
-      <!-- Display activities start -->
       <dd>
         <%= @provider_update.activities %>
       </dd>
-      <!-- Display activities end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @provider_update.user.present? %>
           <a href="/users/<%= @provider_update.user_id %>">
@@ -76,30 +63,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Date
       </dt>
-      <!-- Display date start -->
       <dd>
         <%= @provider_update.date %>
       </dd>
-      <!-- Display date end -->
 
       <dt>
         Reminders
       </dt>
-      <!-- Display reminders start -->
       <dd>
         <%= @provider_update.reminders %>
       </dd>
-      <!-- Display reminders end -->
 
       <dt>
         Venue
       </dt>
-      <!-- Display venue_id start -->
       <dd>
         <% if @provider_update.venue.present? %>
           <a href="/venues/<%= @provider_update.venue_id %>">
@@ -107,28 +88,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display venue_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@provider_update.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@provider_update.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
