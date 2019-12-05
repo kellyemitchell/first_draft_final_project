@@ -1,6 +1,6 @@
 class ParentCommentsController < ApplicationController
   def index
-    @parent_comments = ParentComment.all
+    @parent_comments = ParentComment.page(params[:page]).per(10)
 
     render("parent_comment_templates/index.html.erb")
   end

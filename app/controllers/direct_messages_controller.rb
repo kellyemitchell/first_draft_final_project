@@ -10,7 +10,7 @@ class DirectMessagesController < ApplicationController
   end
 
   def index
-    @direct_messages = DirectMessage.all
+    @direct_messages = DirectMessage.page(params[:page]).per(10)
 
     render("direct_message_templates/index.html.erb")
   end

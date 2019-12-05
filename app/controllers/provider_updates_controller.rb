@@ -1,6 +1,6 @@
 class ProviderUpdatesController < ApplicationController
   def index
-    @provider_updates = ProviderUpdate.all
+    @provider_updates = ProviderUpdate.page(params[:page]).per(10)
 
     render("provider_update_templates/index.html.erb")
   end
