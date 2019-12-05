@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Direct associations
 
+  belongs_to :venue
+
   has_many   :sent_messages,
              :class_name => "DirectMessage",
              :foreign_key => "sender_id",

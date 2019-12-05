@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:venue) }
+
     it { should have_many(:sent_messages) }
 
     it { should have_many(:direct_messages) }
